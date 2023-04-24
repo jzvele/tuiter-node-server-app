@@ -4,9 +4,13 @@
 
 import express from 'express';
 import cors from 'cors';
+import mongoose from "mongoose";
 import HelloController from "./controllers/hello-controller.js";
 import UserController from "./controllers/users/users-controller.js";
 import TuitsController from "./controllers/tuits/tuits-controller.js";
+
+const CONNECTION_STRING = PROCESS.ENV.DB_CONNECTION_STRING
+mongoose.connect('mongodb+srv://jzvelebilova:BMQK870wFhGIaggM@learningcluster.uknuxou.mongodb.net/?retryWrites=true&w=majority');
 
 const app = express();
 app.use(cors());    // configure cors right after instantiating express
