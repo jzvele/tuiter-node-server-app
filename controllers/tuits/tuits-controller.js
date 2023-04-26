@@ -9,18 +9,10 @@ const createTuit = async (req, res) => {
     res.json(insertedTuit);
 }
 
-// const findTuits  = (req, res) => {
-//     const type = req.query.type     // retrieve type parameter from query
-//     if(type) {                      // if type parameter in query
-//         const postsOfType = tuits.filter(u => u.type === type) // find posts of that type
-//         res.json(postsOfType)
-//         return                      // return so it doesn't continue
-//     }
-//     res.json(tuits)
-// }
-
 const findTuits = async (req, res) => {
+    console.log("FindTuits")
     const tuits = await tuitsDao.findTuits()
+    console.log(tuits)
     res.json(tuits);
 }
 
